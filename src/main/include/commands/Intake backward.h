@@ -7,7 +7,7 @@
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
 
-#include "subsystems/Intake.h"
+#include "subsystems/IntakeSubsystem.h"
 
 /**
  * An example command that uses an example subsystem.

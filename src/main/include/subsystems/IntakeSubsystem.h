@@ -6,6 +6,8 @@
 
 #include <frc2/command/SubsystemBase.h>
 
+#include <ctre/Phoenix.h>
+
 class IntakeSubsystem : public frc2::SubsystemBase {
  public:
   IntakeSubsystem();
@@ -14,6 +16,15 @@ class IntakeSubsystem : public frc2::SubsystemBase {
    * Will be called periodically whenever the CommandScheduler runs.
    */
   void Periodic() override;
+
+
+  void Intake();
+
+  void Stop();
+
+  void Unjam();
+
+  void GetRPM();
 
   /**
    * Will be called periodically whenever the CommandScheduler runs during
@@ -24,4 +35,6 @@ class IntakeSubsystem : public frc2::SubsystemBase {
  private:
   // Components (e.g. motor controllers and sensors) should generally be
   // declared private and exposed only through public methods.
+ 
+  WPI_VictorSPX IntakeMotor{8};
 };
