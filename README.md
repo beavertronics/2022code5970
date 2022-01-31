@@ -5,4 +5,4 @@ Freya is in charge of the Robot code as project and writing code
 
 Erik will be working on vision and fine tuning Pids when the time comes 
 
-current plan is to add encoders and limit switches to the code and add super structure systems into the code 2022-1-31
+current plan is to add super structure systems with forwards and backwards commands into the code 2022-1-31
