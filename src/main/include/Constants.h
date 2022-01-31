@@ -13,10 +13,10 @@
  * command-specific namespaces within this header, which can then be used where
  * they are needed.
  */
-//sets contants for PID loops 
+//sets contants for PID loops and for motors without encoders 
 constexpr double kIntakeSpeed = 0.5;
-constexpr double kTargetRPM = 2500;
+constexpr double kTargetRPM = 500;
 
-constexpr double kRPM_OK = 100.0;
+constexpr double kRPM_OK = 10.0;
 
 
