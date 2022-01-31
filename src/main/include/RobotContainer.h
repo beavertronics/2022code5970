@@ -31,7 +31,7 @@ class RobotContainer {
 
   DriveTrain m_drive;
 
-
+  // Adds Jotsticks to the robot.
   frc::Joystick m_leftStick{0};
   frc::Joystick m_rightStick{1};
 
