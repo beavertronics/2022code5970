@@ -20,7 +20,7 @@ class DriveTrain : public frc2::SubsystemBase {
    */
     void Periodic() override;
 
-
+    // Declares the style of human control the robot will use
     void TankDrive(double left, double right);
 
     void SetMaxOutput(double maxOutput);
@@ -35,13 +35,14 @@ class DriveTrain : public frc2::SubsystemBase {
   // declared private and exposed only through public methods.
 
 
-    // right motor controllers
+  // right motor controllers
   WPI_VictorSPX RightLead{5};
   WPI_VictorSPX RightFollow{6};
   // left motor controllers
   WPI_VictorSPX LeftLead{3};
   WPI_VictorSPX LeftFollow{4};
 
+  // DriveTrain being declared as diffy drive which is also WCD
   frc::DifferentialDrive m_drive{RightLead, LeftLead};
 
 };

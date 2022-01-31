@@ -29,6 +29,7 @@ class RobotContainer {
   ExampleSubsystem m_subsystem;
   ExampleCommand m_autonomousCommand;
 
+  // Declares Drivetrain as m_drive
   DriveTrain m_drive;
 
   // Adds Jotsticks to the robot.
