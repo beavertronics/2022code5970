@@ -8,7 +8,7 @@
 #include <frc/Joystick.h>
 #include "commands/ExampleCommand.h"
 #include "subsystems/ExampleSubsystem.h"
-
+#include <frc/XboxController.h>
 #include "subsystems/DriveTrain.h"
  
 /**
@@ -35,6 +35,8 @@ class RobotContainer {
   // Adds Jotsticks to the robot.
   frc::Joystick m_leftStick{0};
   frc::Joystick m_rightStick{1};
+
+  frc::XboxController m_xbox{2};
 
   void ConfigureButtonBindings();
 
