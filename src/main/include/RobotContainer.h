@@ -10,6 +10,8 @@
 #include "subsystems/ExampleSubsystem.h"
 #include <frc/XboxController.h>
 #include "subsystems/DriveTrain.h"
+
+#include "subsystems/IntakeSubsystem.h"
  
 /**
  * This class is where the bulk of the robot should be declared.  Since
@@ -31,6 +33,8 @@ class RobotContainer {
 
   // Declares Drivetrain as m_drive
   DriveTrain m_drive;
+
+  IntakeSubsystem m_intake;
 
   // Adds Jotsticks to the robot.
   frc::Joystick m_leftStick{0};

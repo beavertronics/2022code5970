@@ -26,6 +26,11 @@ class IntakeForward
    */
   explicit IntakeForward(IntakeSubsystem* subsystem);
 
+
+  void Initialize() override;
+
+  bool IsFinished() override;
+
  private:
-  IntakeSubsystem* m_subsystem;
+  IntakeSubsystem* m_intake;
 };
