@@ -1,38 +1,45 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
-
 #pragma once
+
+#include <ctre/Phoenix.h>
+
+#include <frc/DigitalInput.h>
 
 #include <frc2/command/SubsystemBase.h>
 
-#include <ctre/Phoenix.h>
 
 class IntakeSubsystem : public frc2::SubsystemBase {
  public:
   IntakeSubsystem();
 
-  /**
+  // Subsystem methods go here.
+
+/**
    * Will be called periodically whenever the CommandScheduler runs.
    */
   void Periodic() override;
 
-
-  void Intake();
-
-  void Stop();
-
-  //void Unjam();
-
-  //void GetRPM();
+  /**
+   * Move balls towards the shooter
+   */
+  void Forward();
 
   /**
-   * Will be called periodically whenever the CommandScheduler runs during
-   * simulation.
+   * Move balls towards the shooter only if the shooter RPM is close to target
    */
+  void ForwardCheckRPM();
+
+  /**
+   * Move balls away from the shooter, towards the intake
+   */
+  void Backward();
+
+  /**
+   * Stop the shooter
+   */
+  void Stop();
+  
  private:
   // Components (e.g. motor controllers and sensors) should generally be
   // declared private and exposed only through public methods.
- 
   WPI_VictorSPX IntakeMotor{8};
 };
