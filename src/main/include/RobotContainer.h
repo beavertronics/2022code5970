@@ -12,6 +12,7 @@
 #include "subsystems/DriveTrain.h"
 
 #include "subsystems/IntakeSubsystem.h"
+#include "subsystems/ShooterSubsystem.h"
  
 /**
  * This class is where the bulk of the robot should be declared.  Since
@@ -36,6 +37,7 @@ class RobotContainer {
 
   IntakeSubsystem m_intake;
 
+  ShooterSubsystem m_shooter;
   // Adds Jotsticks to the robot.
   frc::Joystick m_leftStick{0};
   frc::Joystick m_rightStick{1};
