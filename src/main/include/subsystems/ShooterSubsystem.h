@@ -37,7 +37,7 @@ class ShooterSubsystem : public frc2::SubsystemBase {
    * advances Shooter forwards some for indexer
    */
  
-  void Feed Forward();
+  void FeedForward();
 
   /**
    * Stop the shooter
