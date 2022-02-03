@@ -36,7 +36,7 @@ void IntakeSubsystem::ForwardCheckRPM() {
 void IntakeSubsystem::Backward() {
     IntakeMotor.Set(ControlMode::PercentOutput, -kIntakeSpeed);
 }
-
+// Command to stop the intake motor and set to 0 speed
 void IntakeSubsystem::Stop() {
     IntakeMotor.Set(ControlMode::PercentOutput, 0.0);
 }
