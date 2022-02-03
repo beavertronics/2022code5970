@@ -26,3 +26,6 @@ constexpr double STargetRPM = 500;
 constexpr double kShootFeedForward = 0.2;
 
 
+
+constexpr double kIndexerSpeed = 1.0;
+
