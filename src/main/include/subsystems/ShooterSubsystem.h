@@ -32,6 +32,12 @@ class ShooterSubsystem : public frc2::SubsystemBase {
    * Move balls away from the shooter, towards the intake
    */
   void Unjam();
+ 
+   /**
+   * advances Shooter forwards some for indexer
+   */
+ 
+  void Feed Forward();
 
   /**
    * Stop the shooter
