@@ -23,4 +23,6 @@ constexpr double kRPM_OK = 10.0;
 constexpr double kShootSpeed = 1.0;
 constexpr double SRPM_OK = 10.0;
 constexpr double STargetRPM = 500;
+constexpr double kShootFeedForward = 0.2;
+
 

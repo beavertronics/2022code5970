@@ -37,6 +37,10 @@ void ShooterSubsystem::Unjam() {
     ShooterMotor.Set(ControlMode::PercentOutput, -kShootSpeed);
 }
 
+void ShooterSubsystem::FeedForward() {
+    ShooterMotor.Set(ControlMode::PercentOutput, kShootFeedForward);
+}
+
 void ShooterSubsystem::Stop() {
     ShooterMotor.Set(ControlMode::PercentOutput, 0.0);
 }
