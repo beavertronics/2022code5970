@@ -2,15 +2,15 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-#include "commands/IntakeForwardCheckRPM.h"
+#include "commands/ClimbUp.h"
 
-IntakeForwardCheckRPM::IntakeForwardCheckRPM(IntakeSubsystem* subsystem) : m_intake(subsystem) {
+ClimbUp::ClimbUp(ClimberSubsystem* subsystem) : m_climb(subsystem) {
   AddRequirements({subsystem});
 }
 
-void IntakeForwardCheckRPM::Initialize() { m_intake->ForwardCheckRPM(); }
+void ClimbUp::Initialize() { m_climb->Climbup(); }
 
 // this is a state, it lasts till it's cancelled
 // It is also the default state, so needs to run forever
 // although we could check if we hit an electic eye
-bool IntakeForwardCheckRPM::IsFinished() { return false; }
+bool ClimbUp::IsFinished() { return false; }

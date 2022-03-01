@@ -23,6 +23,7 @@ class RGB : public frc2::SubsystemBase {
 
   void PrideFlag();
 
+  void Ukraine();
   /**
    * Will be called periodically whenever the CommandScheduler runs during
    * simulation.
