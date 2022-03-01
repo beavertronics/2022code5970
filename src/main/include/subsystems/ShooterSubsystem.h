@@ -39,6 +39,8 @@ class ShooterSubsystem : public frc2::SubsystemBase {
  
   void FeedForward();
 
+  void Intake();
+
   /**
    * Stop the shooter
    */
@@ -48,4 +50,6 @@ class ShooterSubsystem : public frc2::SubsystemBase {
   // Components (e.g. motor controllers and sensors) should generally be
   // declared private and exposed only through public methods.
   WPI_VictorSPX ShooterMotor{45};
+  WPI_VictorSPX IntakerMotor{46};
+  WPI_VictorSPX IndexerMotor{47};
 };
