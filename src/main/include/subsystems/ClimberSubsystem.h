@@ -7,9 +7,9 @@
 #include <frc2/command/SubsystemBase.h>
 
 
-class IndexerSubsystem : public frc2::SubsystemBase {
+class ClimberSubsystem : public frc2::SubsystemBase {
  public:
-  IndexerSubsystem();
+  ClimberSubsystem();
 
   // Subsystem methods go here.
 
@@ -19,27 +19,27 @@ class IndexerSubsystem : public frc2::SubsystemBase {
   void Periodic() override;
 
   /**
-   * Move balls towards the shooter
+   * Moves the climber up
    */
-  void Forward();
+  void Climbup();
 
   /**
    * Move balls towards the shooter only if the shooter RPM is close to target
    */
-  void ForwardCheckRPM();
+  void ClimbAuto();
 
   /**
    * Move balls away from the shooter, towards the intake
    */
-  void Backward();
+  void Climbdown();
 
   /**
-   * Stop the shooter
+   * Stop the Climber
    */
-  void Stop();
+  void ClimbStop();
   
  private:
   // Components (e.g. motor controllers and sensors) should generally be
   // declared private and exposed only through public methods.
-  WPI_VictorSPX IndexerMotor{10};
+  WPI_VictorSPX ClimbMotor{46};
 };

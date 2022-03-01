@@ -7,6 +7,7 @@
 #include <frc2/command/SubsystemBase.h>
 #include <ctre/Phoenix.h>
 #include <frc/drive/DifferentialDrive.h>
+#include <rev/CANSparkMax.h>
 
 
 
@@ -36,11 +37,12 @@ class DriveTrain : public frc2::SubsystemBase {
 
 
   // right motor controllers
-  WPI_VictorSPX RightLead{5};
-  WPI_VictorSPX RightFollow{6};
+
+  WPI_VictorSPX RightLead{41};
+  WPI_VictorSPX RightFollow{42};
   // left motor controllers
-  WPI_VictorSPX LeftLead{3};
-  WPI_VictorSPX LeftFollow{4};
+  WPI_VictorSPX LeftLead{43};
+  WPI_VictorSPX LeftFollow{44};
 
   // DriveTrain being declared as diffy drive which is also WCD
   frc::DifferentialDrive m_drive{RightLead, LeftLead};

@@ -7,7 +7,7 @@
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
 
-#include "subsystems/IntakeSubsystem.h"
+#include "subsystems/ClimberSubsystem.h"
 
 /**
  * An example command that uses an example subsystem.
@@ -16,15 +16,15 @@
  * directly; this is crucially important, or else the decorator functions in
  * Command will *not* work!
  */
-class IntakeForward
-    : public frc2::CommandHelper<frc2::CommandBase, IntakeForward> {
+class ClimbStop
+    : public frc2::CommandHelper<frc2::CommandBase, ClimbStop> {
  public:
   /**
-   * Creates a new IntakeForward.
+   * Creates a new ClimbStop.
    *
    * @param subsystem The subsystem used by this command.
    */
-  explicit IntakeForward(IntakeSubsystem* subsystem);
+  explicit ClimbStop(ClimberSubsystem* subsystem);
 
 
   void Initialize() override;
@@ -32,5 +32,5 @@ class IntakeForward
   bool IsFinished() override;
 
  private:
-  IntakeSubsystem* m_intake;
+  ClimberSubsystem* m_climb;
 };

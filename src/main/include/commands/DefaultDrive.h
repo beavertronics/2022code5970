@@ -26,8 +26,8 @@ class DefaultDrive
    * Creates a new DefaultDrive.
    *
    * @param subsystem The drive subsystem this command will run on.
-   * @param forward The control input for driving forwards/backwards
-   * @param rotation The control input for turning
+   * @param left The control input for driving forwards/backwards
+   * @param right The control input for turning
    */
   DefaultDrive(DriveTrain* subsystem, std::function<double()> left,
                std::function<double()> right);
