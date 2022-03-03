@@ -67,6 +67,22 @@ void RobotContainer::ConfigureButtonBindings() {
 
   frc2::JoystickButton(&m_xbox, Button::kA)
       .WhenHeld(Intake(&m_shooter));
+
+  frc2::JoystickButton(&m_xbox, Button::kBumperLeft)
+      .WhenHeld(ClimbUp(&m_climb));
+    
+  frc2::JoystickButton(&m_xbox, Button::kBumperRight)
+      .WhenHeld(ClimbDown(&m_climb));
+
+  
+  frc2::JoystickButton(&m_leftStick, 1)
+        .ToggleWhenPressed(DefaultDrive(
+      &m_drive,
+      [this] { return -m_rightStick.GetY(); },
+      [this] { return -m_leftStick.GetY(); }));   
+
+   
+
   // move intake arm out and spin intake wheels while A is held down
 // you can stack commands like this (below).  But in this case, RetractIntake is the default anyway
 //      .WhenReleased(RetractIntake(&m_cargo)); 

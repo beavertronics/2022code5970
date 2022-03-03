@@ -22,8 +22,8 @@ void ShooterSubsystem::Periodic() {
 }
 
 void ShooterSubsystem::Shoot() {
-    ShooterMotor.Set(ControlMode::PercentOutput, kShootSpeed);
-    IndexerMotor.Set(ControlMode::PercentOutput, kShootSpeed);
+    ShooterMotor.Set(ControlMode::PercentOutput, 0.7);
+    IndexerMotor.Set(ControlMode::PercentOutput, -1);
     
 }
 
@@ -36,19 +36,20 @@ void ShooterSubsystem::ShootCheckRPM() {
 }
 
 void ShooterSubsystem::Unjam() {
-    ShooterMotor.Set(ControlMode::PercentOutput, -kShootSpeed);
-    IndexerMotor.Set(ControlMode::PercentOutput, -kShootSpeed);
+    ShooterMotor.Set(ControlMode::PercentOutput, -0.3);
+    IntakerMotor.Set(ControlMode::PercentOutput, 0.3);
 }
 
 void ShooterSubsystem::FeedForward() {
     ShooterMotor.Set(ControlMode::PercentOutput, kShootFeedForward);
 }
 void ShooterSubsystem::Intake() {
-    ShooterMotor.Set(ControlMode::PercentOutput, kIntakeSpeed);
-    IntakerMotor.Set(ControlMode::PercentOutput, kIntakeSpeed);
+    ShooterMotor.Set(ControlMode::PercentOutput, 0.5);
+    IntakerMotor.Set(ControlMode::PercentOutput, -0.5);
 }
 void ShooterSubsystem::Stop() {
     ShooterMotor.Set(ControlMode::PercentOutput, 0.0);
     IndexerMotor.Set(ControlMode::PercentOutput, 0.0);
+    IntakerMotor.Set(ControlMode::PercentOutput, 0.0);
 }
 
