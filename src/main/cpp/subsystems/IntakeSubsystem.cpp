@@ -9,7 +9,8 @@
 // Constructor, set following, direction, and set initial state to in and stopped
 ClimberSubsystem::ClimberSubsystem() {
 
-    ClimbMotor.Set(ControlMode::PercentOutput, 0.0);
+    LeftClimbMotor.Set(ControlMode::PercentOutput, 0.0);
+    RightClimbMotor.Set(ControlMode::PercentOutput, 0.0);
 }
 
 // Methods
@@ -22,7 +23,8 @@ void ClimberSubsystem::Periodic() {
 }
 
 void ClimberSubsystem::Climbup() {
-    ClimbMotor.Set(ControlMode::PercentOutput, kIntakeSpeed);
+    LeftClimbMotor.Set(ControlMode::PercentOutput, kIntakeSpeed);
+    RightClimbMotor.Set(ControlMode::PercentOutput, kIntakeSpeed);
 }
 
 void ClimberSubsystem::ClimbAuto() {
@@ -30,13 +32,17 @@ void ClimberSubsystem::ClimbAuto() {
 // Here we check that RPMS are within kRPM_OK on the low side.  Anything faster is ok
 // If you're worried about goign to fast, change this calculation
     if ((frc::SmartDashboard::GetNumber("RPM",0.0) + kRPM_OK) >= kTargetRPM) 
-        ClimbMotor.Set(ControlMode::PercentOutput, kIntakeSpeed);
+        LeftClimbMotor.Set(ControlMode::PercentOutput, kIntakeSpeed);
 }
 
 void ClimberSubsystem::Climbdown() {
-    ClimbMotor.Set(ControlMode::PercentOutput, -kIntakeSpeed);
+    LeftClimbMotor.Set(ControlMode::PercentOutput, -kIntakeSpeed);
+    RightClimbMotor.Set(ControlMode::PercentOutput, -kIntakeSpeed);
+    
 }
 // Command to stop the intake motor and set to 0 speed
 void ClimberSubsystem::ClimbStop() {
-    ClimbMotor.Set(ControlMode::PercentOutput, 0.0);
+    LeftClimbMotor.Set(ControlMode::PercentOutput, 0.0);
+    RightClimbMotor.Set(ControlMode::PercentOutput, 0.0);
+
 }

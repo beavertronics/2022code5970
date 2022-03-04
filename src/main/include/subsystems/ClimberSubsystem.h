@@ -41,5 +41,6 @@ class ClimberSubsystem : public frc2::SubsystemBase {
  private:
   // Components (e.g. motor controllers and sensors) should generally be
   // declared private and exposed only through public methods.
-  WPI_TalonFX ClimbMotor{21};
+  WPI_VictorSPX RightClimbMotor{32};
+  WPI_VictorSPX LeftClimbMotor{31};
 };

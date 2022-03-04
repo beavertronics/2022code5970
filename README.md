@@ -7,9 +7,17 @@ Landon is working on learning code and how to tune PIDs when time come as well
 
 Erik will be working on vision and fine tuning Pids when the time comes 
 
-current plan is to add super structure systems with forwards and backwards commands into the code 2022-1-31
+current plan is to add super structure systems with forwards and backwards commands into the code 
 
+2022-3-3
 
+no vison 
+
+auto is basic 
+
+the step ladder has died 3 times trying to climb 
+
+but it runs
 
 can ID list is 
 
