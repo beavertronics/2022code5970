@@ -3,6 +3,7 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include "subsystems/DriveTrain.h"
+#include <frc/smartdashboard/SmartDashboard.h>
 
 DriveTrain::DriveTrain() {
   // Implementation of subsystem constructor goes here.
@@ -25,10 +26,45 @@ DriveTrain::DriveTrain() {
 }
 
 void DriveTrain::Periodic() {
+
+
   // Implementation of subsystem periodic method goes here.
+  
+  gyroAngle = gyro.GetAngle();
+  frc::SmartDashboard::PutNumber("gyroAngle", gyroAngle);
+  gyroRate = gyro.GetRate();
+  frc::SmartDashboard::PutNumber("gyroRate", gyroRate);
+
+
+
+
 }
 void DriveTrain::TankDrive(double left, double right) {
   m_drive.TankDrive(left, right);
+}
+/*
+void DriveTrain::FULLYEET(double left, double right){
+
+  m_drive.TankDrive(1, 1);
+
+}
+*/
+void DriveTrain::ZeroGyro(){
+  gyro.Reset();
+}
+units::degree_t DriveTrain::GetHeading() {
+  // make sure it fits in +/- 180.  Yaw does this, so should be ok.
+  return units::degree_t((gyroAngle) * (kGyroReversed ? -1.0 : 1.0));
+}
+
+double DriveTrain::GetTurnRate() {
+  return gyroRate * (kGyroReversed ? -1.0 : 1.0);
+}
+units::degree_t DriveTrain::SanitizeAngle(units::degree_t target){
+  units::degree_t cleanedAngle = target;
+  if ( cleanedAngle >= 180_deg) cleanedAngle -= 360_deg;
+  if ( cleanedAngle <= -180_deg) cleanedAngle += 360_deg;
+  return cleanedAngle;
 }
 void DriveTrain::SimulationPeriodic() {
   // Implementation of subsystem simulation periodic method goes here.

@@ -23,7 +23,7 @@ void ClimberSubsystem::Periodic() {
 }
 
 void ClimberSubsystem::Climbup() {
-    LeftClimbMotor.Set(ControlMode::PercentOutput, kIntakeSpeed);
+    LeftClimbMotor.Set(ControlMode::PercentOutput, -kIntakeSpeed);
     RightClimbMotor.Set(ControlMode::PercentOutput, kIntakeSpeed);
 }
 
@@ -36,7 +36,7 @@ void ClimberSubsystem::ClimbAuto() {
 }
 
 void ClimberSubsystem::Climbdown() {
-    LeftClimbMotor.Set(ControlMode::PercentOutput, -kIntakeSpeed);
+    LeftClimbMotor.Set(ControlMode::PercentOutput, kIntakeSpeed);
     RightClimbMotor.Set(ControlMode::PercentOutput, -kIntakeSpeed);
     
 }

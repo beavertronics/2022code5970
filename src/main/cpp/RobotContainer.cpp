@@ -7,6 +7,8 @@
 #include <frc/Joystick.h>
 #include "commands/DefaultDrive.h"
 
+
+#include <frc/shuffleboard/Shuffleboard.h>
 #include "commands/ClimbUp.h"
 #include "commands/ClimbDown.h"
 #include "commands/ClimbAuto.h"
@@ -18,12 +20,15 @@
 #include "commands/Intake.h"
 #include "Constants.h"
 
-
-RobotContainer::RobotContainer() { 
+RobotContainer::RobotContainer()
+: m_autonomousCommand(m_drive) {
   // Initialize all of your commands and subsystems here
+ // Initialize all of your commands and subsystems here
 
+  // Add commands to the autonomous command chooser
+  
 
-
+// lord help us 
   // Configure the button bindings
   ConfigureButtonBindings(); 
 
@@ -58,14 +63,14 @@ void RobotContainer::ConfigureButtonBindings() {
   // So, changed the .WhileHeld() to .WhenHeld()
 
   // Spin up shooter motor for low while pressed
-  frc2::JoystickButton(&m_xbox, Button::kB)
+  frc2::JoystickButton(&m_xbox, Button::kA)
       .WhenHeld(ShooterShoot(&m_shooter));
 
   //Spin up shooter motor for high while pressed, and rumble controller if you're too close
   frc2::JoystickButton(&m_xbox, Button::kY)
       .WhenHeld(ShooterUnjam(&m_shooter));
 
-  frc2::JoystickButton(&m_xbox, Button::kA)
+  frc2::JoystickButton(&m_xbox, Button::kX)
       .WhenHeld(Intake(&m_shooter));
 
   frc2::JoystickButton(&m_xbox, Button::kBumperLeft)
@@ -90,6 +95,8 @@ void RobotContainer::ConfigureButtonBindings() {
 }
 
 
-//frc2::Command* RobotContainer::GetAutonomousCommand() {
+frc2::Command* RobotContainer::GetAutonomousCommand() {
   // An example command will be run in autonomous
-//}
+  return &m_autonomousCommand;
+}
+

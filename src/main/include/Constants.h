@@ -19,6 +19,14 @@ constexpr double kTargetRPM = 500;
 
 constexpr double kRPM_OK = 10.0;
 
+// Turning constants
+constexpr bool kGyroReversed = false;
+
+
+constexpr double kStabilizationP = 1; //tune This to start oscillating.  0.2 made 0.667s periods .12
+constexpr double kStabilizationI = 0; //Then tune this to stop the osolating .36
+constexpr double kStabilizationD = 0.1; //Finaly tune this to fix final error  .01
+
 
 constexpr double kShootSpeed = 1.0;
 constexpr double SRPM_OK = 10.0;

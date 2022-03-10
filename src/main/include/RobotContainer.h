@@ -10,6 +10,10 @@
 #include "subsystems/ExampleSubsystem.h"
 #include <frc/XboxController.h>
 #include "subsystems/DriveTrain.h"
+#include <frc/smartdashboard/SendableChooser.h>
+#include "commands/auto.h"
+
+
 
 #include "subsystems/ClimberSubsystem.h"
 #include "subsystems/ShooterSubsystem.h"
@@ -36,6 +40,11 @@ class RobotContainer {
   ClimberSubsystem m_climb;
 
   ShooterSubsystem m_shooter;
+    // The auto routines
+  Autonomous m_autonomousCommand;
+
+  // The chooser for the autonomous routines
+ 
   // Adds Jotsticks to the robot.
   frc::Joystick m_leftStick{0};
   frc::Joystick m_rightStick{1};
