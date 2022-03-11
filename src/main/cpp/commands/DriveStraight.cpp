@@ -14,7 +14,7 @@
 DriveStraight::DriveStraight(double power, DriveTrain& drivetrain)
     : frc2::CommandHelper<frc2::PIDCommand, DriveStraight>(
           frc2::PIDController(kStabilizationP, kStabilizationI, kStabilizationD),
-          [&drivetrain] { return 1; }, power,
+          [&drivetrain] { return 0; }, power,
           [&drivetrain](double output) { drivetrain.TankDrive(output, output); },
           {&drivetrain}),
       m_drivetrain(&drivetrain) {

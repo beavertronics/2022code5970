@@ -7,6 +7,8 @@
 #include <frc/Joystick.h>
 #include "commands/DefaultDrive.h"
 
+#include <frc/DriverStation.h>
+
 
 #include <frc/shuffleboard/Shuffleboard.h>
 #include "commands/ClimbUp.h"
@@ -21,12 +23,14 @@
 #include "Constants.h"
 
 RobotContainer::RobotContainer()
-: m_autonomousCommand(m_drive) {
+: m_autonomousCommand(m_drive, m_shooter) {
   // Initialize all of your commands and subsystems here
  // Initialize all of your commands and subsystems here
 
   // Add commands to the autonomous command chooser
-  
+  //if (frc::DriverStation::GetInstance().GetAlliance() == kBlueCenter){
+  //m_led.Blue();
+  //}
 
 // lord help us 
   // Configure the button bindings

@@ -15,6 +15,7 @@
 
 
 #include "subsystems/DriveTrain.h"
+#include "subsystems/ShooterSubsystem.h"
 
 
 /**
@@ -23,5 +24,6 @@
 class Autonomous
     : public frc2::CommandHelper<frc2::SequentialCommandGroup, Autonomous> {
  public:
-  Autonomous(DriveTrain& drive);
+  Autonomous(DriveTrain& drive,ShooterSubsystem& subsystem);
+
 };
