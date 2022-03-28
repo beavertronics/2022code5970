@@ -24,7 +24,7 @@ class ShooterStop
    *
    * @param subsystem The subsystem used by this command.
    */
-  explicit ShooterStop(ShooterSubsystem* subsystem);
+  explicit ShooterStop(ShooterSubsystem& subsystem);
 
 
   void Initialize() override;
@@ -32,5 +32,5 @@ class ShooterStop
   bool IsFinished() override;
 
  private:
-  ShooterSubsystem* m_shooter;
+  ShooterSubsystem& m_shooter;
 };

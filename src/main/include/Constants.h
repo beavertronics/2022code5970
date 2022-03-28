@@ -14,7 +14,7 @@
  * they are needed.
  */
 //sets contants for PID loops and for motors without encoders 
-constexpr double kIntakeSpeed = 0.5;
+constexpr double kIntakeSpeed = 1;
 constexpr double kTargetRPM = 500;
 
 constexpr double kRPM_OK = 10.0;

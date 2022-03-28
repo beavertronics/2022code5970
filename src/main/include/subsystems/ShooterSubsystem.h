@@ -41,6 +41,8 @@ class ShooterSubsystem : public frc2::SubsystemBase {
 
   void Intake();
 
+  void IntakeReverse();
+
   /**
    * Stop the shooter
    */

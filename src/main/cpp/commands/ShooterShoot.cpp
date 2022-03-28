@@ -4,11 +4,11 @@
 
 #include "commands/ShooterShoot.h"
 
-ShooterShoot::ShooterShoot(ShooterSubsystem* subsystem) : m_shooter(subsystem) {
-  AddRequirements({subsystem});
+ShooterShoot::ShooterShoot(ShooterSubsystem& subsystem) : m_shooter(subsystem) {
+  AddRequirements({&subsystem});
 }
 
-void ShooterShoot::Initialize() { m_shooter->Shoot(); }
+void ShooterShoot::Initialize() { m_shooter.Shoot(); }
 
 // this is a state, it lasts till it's cancelled
 // It is also the default state, so needs to run forever

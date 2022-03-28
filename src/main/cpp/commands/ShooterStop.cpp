@@ -4,11 +4,11 @@
 
 #include "commands/ShooterStop.h"
 
-ShooterStop::ShooterStop(ShooterSubsystem* subsystem) : m_shooter(subsystem) {
-  AddRequirements({subsystem});
+ShooterStop::ShooterStop(ShooterSubsystem& subsystem) : m_shooter(subsystem) {
+  AddRequirements({&subsystem});
 }
 
-void ShooterStop::Initialize() { m_shooter->Stop(); }
+void ShooterStop::Initialize() { m_shooter.Stop(); }
 
 // this is a state, it lasts till it's cancelled
 // It is also the default state, so needs to run forever

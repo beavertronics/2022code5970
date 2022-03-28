@@ -4,11 +4,11 @@
 
 #include "commands/ShooterUnjam.h"
 
-ShooterUnjam::ShooterUnjam(ShooterSubsystem* subsystem) : m_shooter(subsystem) {
-  AddRequirements({subsystem});
+ShooterUnjam::ShooterUnjam(ShooterSubsystem& subsystem) : m_shooter(subsystem) {
+  AddRequirements({&subsystem});
 }
 
-void ShooterUnjam::Initialize() { m_shooter->Unjam(); }
+void ShooterUnjam::Initialize() { m_shooter.Unjam(); }
 
 // this is a state, it lasts till it's cancelled
 // It is also the default state, so needs to run forever

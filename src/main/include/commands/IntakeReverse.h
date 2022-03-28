@@ -16,15 +16,15 @@
  * directly; this is crucially important, or else the decorator functions in
  * Command will *not* work!
  */
-class Intake
-    : public frc2::CommandHelper<frc2::CommandBase, Intake> {
+class IntakeReverse
+    : public frc2::CommandHelper<frc2::CommandBase, IntakeReverse> {
  public:
   /**
-   * Creates a new Intake.
+   * Creates a new IntakeReverse.
    *
    * @param subsystem The subsystem used by this command.
    */
-  explicit Intake(ShooterSubsystem& subsystem);
+  explicit IntakeReverse(ShooterSubsystem& subsystem);
 
 
   void Initialize() override;

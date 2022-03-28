@@ -20,7 +20,9 @@
 #include "commands/ShooterStop.h"
 #include "commands/ShooterUnjam.h"
 #include "commands/Intake.h"
+#include "commands/IntakeReverse.h"
 #include "Constants.h"
+#include <cameraserver/CameraServer.h>
 
 RobotContainer::RobotContainer()
 : m_autonomousCommand(m_drive, m_shooter) {
@@ -31,6 +33,8 @@ RobotContainer::RobotContainer()
   //if (frc::DriverStation::GetInstance().GetAlliance() == kBlueCenter){
   //m_led.Blue();
   //}
+
+ frc::CameraServer::StartAutomaticCapture();
 
 // lord help us 
   // Configure the button bindings
@@ -43,7 +47,7 @@ RobotContainer::RobotContainer()
       [this] { return m_rightStick.GetY(); }));
 
 // Set default intake, shooter, and indexer command.  Does this when not doing something else
-  m_shooter.SetDefaultCommand(ShooterStop(&m_shooter));
+  m_shooter.SetDefaultCommand(ShooterStop(m_shooter));
 
 // Set default climber command.  Does this when not doing something else
   m_climb.SetDefaultCommand(ClimbStop(&m_climb));
@@ -68,14 +72,17 @@ void RobotContainer::ConfigureButtonBindings() {
 
   // Spin up shooter motor for low while pressed
   frc2::JoystickButton(&m_xbox, Button::kA)
-      .WhenHeld(ShooterShoot(&m_shooter));
+      .WhenHeld(ShooterShoot(m_shooter));
 
   //Spin up shooter motor for high while pressed, and rumble controller if you're too close
   frc2::JoystickButton(&m_xbox, Button::kY)
-      .WhenHeld(ShooterUnjam(&m_shooter));
+      .WhenHeld(ShooterUnjam(m_shooter));
 
   frc2::JoystickButton(&m_xbox, Button::kX)
-      .WhenHeld(Intake(&m_shooter));
+      .WhenHeld(Intake(m_shooter));
+  
+  frc2::JoystickButton(&m_xbox, Button::kB)
+      .WhenHeld(IntakeReverse(m_shooter));
 
   frc2::JoystickButton(&m_xbox, Button::kBumperLeft)
       .WhenHeld(ClimbUp(&m_climb));

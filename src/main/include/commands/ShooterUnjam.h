@@ -25,7 +25,7 @@ class ShooterUnjam
    *
    * @param subsystem The subsystem used by this command.
    */
-  explicit ShooterUnjam(ShooterSubsystem* subsystem);
+  explicit ShooterUnjam(ShooterSubsystem& subsystem);
 
 
   void Initialize() override;
@@ -33,5 +33,5 @@ class ShooterUnjam
   bool IsFinished() override;
 
  private:
-  ShooterSubsystem* m_shooter;
+  ShooterSubsystem& m_shooter;
 };

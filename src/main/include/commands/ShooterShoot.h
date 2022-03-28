@@ -24,7 +24,7 @@ class ShooterShoot
    *
    * @param subsystem The subsystem used by this command.
    */
-  explicit ShooterShoot(ShooterSubsystem* subsystem);
+  explicit ShooterShoot(ShooterSubsystem& subsystem);
 
 
   void Initialize() override;
@@ -32,5 +32,5 @@ class ShooterShoot
   bool IsFinished() override;
 
  private:
-  ShooterSubsystem* m_shooter;
+  ShooterSubsystem& m_shooter;
 };
