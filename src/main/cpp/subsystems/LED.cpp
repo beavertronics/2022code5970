@@ -2,7 +2,7 @@
 This section of the code controls the onboard LED lightstrips on the sides of the robot
 NOT FINISHED - Mar. 29
 */
-#include <array>
+/*#include <array>
 
 #include <frc/AddressableLED.h>
 #include <frc/TimedRobot.h>
@@ -38,7 +38,7 @@ class Robot : public frc::TimedRobot {
   }
   void Orange(){//orange hsv(39, 100%, 100%)
     for (int i = 0; i < kLength; i++){
-        m_ledBuffer[i].setHSV(39, 255, 128));
+        m_ledBuffer[i].SetHSV(39, 255, 128));
     }
   }
   void Flag(){//pride flag, country flags
@@ -85,3 +85,4 @@ int main() {
   return frc::StartRobot<Robot>();
 }
 #endif
+*/

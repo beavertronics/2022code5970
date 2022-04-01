@@ -9,7 +9,7 @@
 // Constructor, set following, direction, and set initial state to in and stopped
 ShooterSubsystem::ShooterSubsystem() {
 
-    ShooterMotor.Set(ControlMode::PercentOutput, 0.0);
+    ShooterMotor.Set(ControlMode::Velocity, 0.0);
 }
 
 // Methods
@@ -23,7 +23,7 @@ void ShooterSubsystem::Periodic() {
 
 void ShooterSubsystem::Shoot() {
     ShooterMotor.Set(ControlMode::PercentOutput, 1);
-    IndexerMotor.Set(ControlMode::PercentOutput, -1);
+    IndexerMotor.Set(ControlMode::PercentOutput, -0.8);
     
 }
 
@@ -44,8 +44,9 @@ void ShooterSubsystem::FeedForward() {
     ShooterMotor.Set(ControlMode::PercentOutput, kShootFeedForward);
 }
 void ShooterSubsystem::Intake() {
-    ShooterMotor.Set(ControlMode::PercentOutput, 0.5);
+    ShooterMotor.Set(ControlMode::PercentOutput, 0.4);
     IntakerMotor.Set(ControlMode::PercentOutput, -0.5);
+    IndexerMotor.Set(ControlMode::PercentOutput, 0.5);
 }
 
 void ShooterSubsystem::IntakeReverse(){
